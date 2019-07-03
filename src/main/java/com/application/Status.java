@@ -6,4 +6,9 @@ public enum Status {
     OFFLINE,
     AWAY;
 
+
+    @Override
+    public String toString() {
+        return this.name();
+    }
 }

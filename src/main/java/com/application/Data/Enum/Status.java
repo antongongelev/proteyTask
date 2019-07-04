@@ -1,4 +1,4 @@
-package com.application;
+package com.application.Data.Enum;
 
 public enum Status {
 

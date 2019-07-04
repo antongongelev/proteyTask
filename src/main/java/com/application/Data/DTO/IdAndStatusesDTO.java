@@ -1,4 +1,6 @@
-package com.application;
+package com.application.Data.DTO;
+
+import com.application.Data.Enum.Status;
 
 public class IdAndStatusesDTO {
 

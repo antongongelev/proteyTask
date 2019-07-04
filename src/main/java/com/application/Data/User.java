@@ -1,4 +1,6 @@
-package com.application;
+package com.application.Data;
+
+import com.application.Data.Enum.Status;
 
 import javax.persistence.*;
 

@@ -1,5 +1,10 @@
-package com.application;
+package com.application.Service;
 
+import com.application.Data.DTO.IdAndStatusesDTO;
+import com.application.Data.Enum.Status;
+import com.application.Data.User;
+import com.application.Exception.BadRequestException;
+import com.application.Repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

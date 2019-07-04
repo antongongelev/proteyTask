@@ -1,5 +1,6 @@
-package com.application;
+package com.application.Configuration;
 
+import com.application.Data.Enum.Status;
 import org.springframework.core.convert.converter.Converter;
 
 public class MyEnumConverter implements Converter<String, Status> {

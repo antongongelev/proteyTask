@@ -1,4 +1,4 @@
-package com.application;
+package com.application.Configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.support.FormattingConversionService;

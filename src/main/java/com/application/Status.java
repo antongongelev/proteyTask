@@ -4,11 +4,6 @@ public enum Status {
 
     ONLINE,
     OFFLINE,
-    AWAY;
+    AWAY
 
-
-    @Override
-    public String toString() {
-        return this.name();
-    }
 }

@@ -13,13 +13,13 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("create")
-    public Long create(@RequestBody(required = false) User user) {
+    public Long create(@RequestBody(required = false) User user) throws BadRequestException {
         return userService.create(user);
     }
 
     @PostMapping("update-status/{id}+{newStatus}")
     public IdAndStatusesDTO updateStatus(@PathVariable("id") Long id,
-                                         @PathVariable("newStatus") Status newStatus) throws Exception {
+                                         @PathVariable("newStatus") Status newStatus) throws BadRequestException {
         return userService.updateStatus(id, newStatus);
     }
 
@@ -29,7 +29,7 @@ public class UserController {
     }
 
     @GetMapping(value = "{id}")
-    public User getUsers(@PathVariable("id") Long id) throws Exception {
+    public User getUsers(@PathVariable("id") Long id) throws BadRequestException {
         return userService.getUser(id);
     }
 

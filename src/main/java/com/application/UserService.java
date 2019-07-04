@@ -10,21 +10,27 @@ public class UserService {
     @Autowired
     UserRepo userRepo;
 
-    public Long create(User user) {
+    public Long create(User user) throws BadRequestException {
+
+        for (User u : userRepo.findAll()) {
+            if (user.getEmail().equals(u.getEmail())) {
+                throw new BadRequestException
+                        ("The email \'" + user.getEmail() + "\' has already been registered");
+            }
+        }
         userRepo.save(user);
         return user.getId();
     }
 
-    public IdAndStatusesDTO updateStatus(Long id, Status newStatus) throws Exception {
+    public IdAndStatusesDTO updateStatus(Long id, Status newStatus) throws BadRequestException {
 
         User user = userRepo.findById(id).orElse(null);
-        if (user == null)
-            throw new Exception("User was not found");//Could use logger, but it would have taken more time
-        if (!newStatus.name().toUpperCase().equals("ONLINE")&&
-                !newStatus.name().toUpperCase().equals("OFFLINE")&&
-                !newStatus.name().toUpperCase().equals("AWAY")){
-            throw new Exception("Status should be 'ONLINE', 'OFFLINE' or 'AWAY'");
-        }//TODO
+        if (user == null) {
+            throw new BadRequestException("User with id \'" + id + "\' was not found");
+        }
+        if (newStatus != Status.ONLINE && newStatus != Status.OFFLINE && newStatus != Status.AWAY) {
+            throw new BadRequestException("New Status should be 'ONLINE', 'OFFLINE' or 'AWAY'");
+        }
         Status previousStatus = user.getStatus();
         user.setStatus(newStatus);
         userRepo.save(user);
@@ -35,9 +41,11 @@ public class UserService {
         return userRepo.findAll();
     }
 
-    public User getUser(Long id) throws Exception {
+    public User getUser(Long id) throws BadRequestException {
         User user = userRepo.findById(id).orElse(null);
-        if (user == null) throw new Exception("User was not found");
+        if (user == null) {
+            throw new BadRequestException("User with id \'" + id + "\' was not found");
+        }
         return user;
     }
 }

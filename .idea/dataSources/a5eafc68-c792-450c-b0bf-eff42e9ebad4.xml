@@ -46,90 +46,9 @@
     <schema id="11" parent="4" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
-      <IntrospectionTimestamp>2019-07-03.19:57:49.538</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1506</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2019-07-05.11:57:49.839</IntrospectionTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
-    <sequence id="12" parent="11" name="users_id_seq">
-      <ObjectId>25205</ObjectId>
-      <StateNumber>1505</StateNumber>
-      <SequenceIdentity>1</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
-      <CacheSize>1</CacheSize>
-    </sequence>
-    <table id="13" parent="11" name="users">
-      <ObjectId>25207</ObjectId>
-      <StateNumber>1505</StateNumber>
-    </table>
-    <column id="14" parent="13" name="id">
-      <Position>1</Position>
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1505</StateNumber>
-      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
-      <TypeId>20</TypeId>
-      <SequenceName>users_id_seq</SequenceName>
-    </column>
-    <column id="15" parent="13" name="age">
-      <Position>2</Position>
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1505</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="16" parent="13" name="email">
-      <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1505</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="17" parent="13" name="first_name">
-      <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <StateNumber>1505</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="18" parent="13" name="second_name">
-      <Position>5</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <StateNumber>1505</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="19" parent="13" name="sex">
-      <Position>6</Position>
-      <DataType>boolean|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1505</StateNumber>
-      <TypeId>16</TypeId>
-    </column>
-    <column id="20" parent="13" name="status">
-      <Position>7</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <StateNumber>1505</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <index id="21" parent="13" name="users_pkey">
-      <ObjectId>25214</ObjectId>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <index id="22" parent="13" name="uk_6dotkott2kjsp8vw4d0m25fb7">
-      <ObjectId>25216</ObjectId>
-      <ColNames>email</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="23" parent="13" name="users_pkey">
-      <ObjectId>25215</ObjectId>
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <key id="24" parent="13" name="uk_6dotkott2kjsp8vw4d0m25fb7">
-      <ObjectId>25217</ObjectId>
-      <ColNames>email</ColNames>
-      <UnderlyingIndexName>uk_6dotkott2kjsp8vw4d0m25fb7</UnderlyingIndexName>
-    </key>
   </database-model>
 </dataSource>

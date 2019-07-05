@@ -3,6 +3,7 @@ package com.application.Data;
 import com.application.Data.Enum.Status;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "users")
@@ -21,6 +22,7 @@ public class User {
     private String email;
     @Enumerated(EnumType.STRING)
     private Status status = Status.ONLINE;
+    private Long timeStamp = new Date().getTime();
 
     public User() {
     }
@@ -87,5 +89,14 @@ public class User {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public Long getTimeStamp() {
+        return timeStamp;
+    }
+
+
+    public void setTimeStamp(Long timeStamp) {
+        this.timeStamp = timeStamp;
     }
 }

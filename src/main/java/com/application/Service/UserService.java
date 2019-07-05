@@ -8,6 +8,8 @@ import com.application.Repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 
 @Service
 public class UserService {
@@ -38,6 +40,9 @@ public class UserService {
         }
         Status previousStatus = user.getStatus();
         user.setStatus(newStatus);
+        if (newStatus == Status.ONLINE) {
+            user.setTimeStamp(new Date().getTime());
+        }
         userRepo.save(user);
         return new IdAndStatusesDTO(id, previousStatus, newStatus);
     }
